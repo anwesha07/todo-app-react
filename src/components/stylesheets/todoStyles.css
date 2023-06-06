@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
+.outer-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgb(126 159 244), rgb(180, 180, 246));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 95%;
+  width: 100vw;
+  max-width: 480px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: var(--darkBlue);
+  border-radius: 5px;
+  box-shadow:  var(--lightBlue) 0px 3px 8px;
+}
+.content {
+  min-width: 100%;
+  height: 100%;
+  background-color: var(--lightBlue);
+  border-radius: 5px;
+  box-shadow:  var(--lightBlue) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  padding-top: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transform: translateX(75%) scale(0.9);
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+.content.active {
+  transform: translateX(0) scale(1);
+}
+.header {
+  color: var(--darkText);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.header h1{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  /* width: calc(100% - 50px) */
+}
+.header button {
+  background-color: transparent;
+  border: none;
+  color: var(--darkText);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--lightText);
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.body{
+  /* outline: 2px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  flex-grow: 1;
+}
+.todoInput {
+  /* outline: 2px solid green; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+.todoInputForm{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.todoInputbox{
+  text-decoration: none;
+  border:none;
+  border-radius: 20px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  /* margin: 0px 10px; */
+}
+.todoInputbox:focus {
+  outline: none;
+}
+.alarmIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--darkText);
+  position: absolute;
+  right: 10px;
+  height: 20px;
+  top: 20px;
+  transform: translateY(-50%);
+  color: var(--pinkBg);
+  cursor: pointer;
+}
+.alarmIcon:hover {
+  color: var(--pinkBg);
+}
+.addTodoButtonContainer {
+  /* outline: 2px solid red; */
+  height: 40px;
+  aspect-ratio: 1/1;
+  margin-left: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--pinkBg);
+
+}
+.addTodoButton{
+  display: none;
+}
+.todoList {
+  /* outline: 2px solid red; */
+  width: 100%;
+  height: 450px;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+.pendingHeader {
+  color: var(--lightText);
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+.overdueHeader {
+  color: red;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+
+.todo {
+  /* outline: 2px solid yellow; */
+  width: 96%;
+  height: 70px;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--darkBlue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoContent {
+  display: flex;
+    align-items: center;
+    width: 100%;
+}
+.checkbox{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox input {
+  outline: none
+}
+.todoValue {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: var(--darkBlue);
+  color: var(--darkText);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border: none;
+  width: 80%;
+}
+.todoValue:focus{
+  outline: none;
+}
+.todoValueActive{
+  color: var(--pinkBg)
+}
+.todoValueCompleted{
+  text-decoration: line-through;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  background-color: #2f3855;
+}
+
+.buttonContainer{
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editButton {
+  color: var(--lightText);
+  background-color: var(--darkBlue);
+  border: none;
+  padding: 10px;
+}
+.editButton:hover {
+  color: var(--pinkBg);
+}
+
+.editButtonActive{
+  color: var(--pinkBg)
+}
+.deleteButton {
+  color: var(--lightText);
+  background-color: var(--darkBlue);
+  border: none;
+  padding: 10px;
+}
+.deleteButton:hover {
+  color: red
+}
+.buttonCompleted {
+  background-color: #2f3855;
+}
+
+.pendingDeadline {
+  padding-left: 10px;
+  padding-top: 4px;
+  font-size: 0.65rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--darkText);
+}
+ .overdueDeadline {
+  padding-left: 10px;
+  padding-top: 4px;
+  font-size: 0.65rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: red;
+ }
+
+
+.rdtPicker {
+  border-radius: 10px;
+  position: absolute;
+    top: 50px;
+    right: 0;
+    box-shadow: rgb(0 0 0 / 15%) 4px 4px 2.6px;
+    /* border-radius: 20px; */
+}
+
+.menuContent {
+  min-width: 100%;
+  height: 100%;
+  background-color: var(--darkBlue);
+  border-radius: 5px;
+  box-shadow:  var(--lightBlue) 0px 3px 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-left: 4px;
+  padding-right: 10px;
+  position: relative;
+  transform: translateX(-200%);
+  transition: all 0.5s ease-in;
+}
+.menuContent.active {
+  transform: translateX(-100%);
+}
+.menuHeader {
+  /* outline: 2px solid red; */
+  color: var(--darkText);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 200px;
+}
+.menuHeader img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.menuHeader h2{
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 1px
+}
+.headerItemContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.headerItem{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.menuBody{
+  /* outline: 2px solid yellow; */
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  padding-top: 50px;
+  flex-grow: 1;
+}
+.menuItemContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.menuItemContainer:hover {
+  background-color: var(--lightBlue);
+}
+.menuItem {
+  height: 50px;
+  width: 60%;
+  color: var(--darkText);
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
+  /* letter-spacing: 1px */
+}
+.menuItemText{
+  padding: 10px;
+  cursor: default;
+}
+.closeMenuButtonContainer {
+  background-color: var(--darkBlue);
+    position: absolute;
+    top: 60px;
+    right: 180px;
+}
+.closeMenuButtonContainer button {
+  background-color: var(--darkBlue);
+    border: 2px solid var(--lightBlue);
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.noTodoHeader {
+  color: var(--lightText);
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px
+}

@@ -1,0 +1,52 @@
+.homePage{
+  height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--darkBlue);
+    color: var(--darkText);
+    padding: 20px;
+    max-width: 480px;
+    background-image: linear-gradient(var(--darkBlue), var(--lightBlue));
+    box-shadow:  var(--lightBlue) 0px 3px 8px;
+    border-radius: 5px
+}
+
+.homeheader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 4.5rem;
+  padding: 10px;
+  padding-bottom: 20px;
+  font-style: italic;
+  /* letter-spacing: 0.005rem; */
+}
+.subtitle{
+  color: var(--lightText);
+  font-size: 1.2rem;
+  padding-inline: 80px;
+  padding-top: 20px;
+    text-align: center;
+    line-height: 1.75;
+}
+.signInButton{
+  background-color:var(--darkBlue);
+  border: 1px solid var(--darkText);
+  border-radius: 2px;
+  font-size: 1.2rem;
+  color: var(--darkText);
+  cursor: pointer;
+  padding: 10px;
+  width: 250px;
+  height: 60px;
+  box-shadow:  var(--darkText) 1px 1px 2px;
+}
+.signInButton:hover {
+  color: var(--lightText);
+}
