@@ -22,17 +22,11 @@ function Todo(props) {
   // setup web worker
 
   useEffect(() => {
-    // // Request permission for notifications
-    // Notification.requestPermission();
-
-    console.log("Notification" in window);
-    console.log(Notification.permission);
-
     // create an instance of the web worker
     const newWorker = new Worker(new URL("../worker.js", import.meta.url));
     setWorker(newWorker);
 
-    // Send a message to the web worker with the desired delay and message
+    // Send a message to the web worker
     newWorker.postMessage({ message: "Web worker execution" });
 
     // Handle the message received from the web worker

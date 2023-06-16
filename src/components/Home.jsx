@@ -54,7 +54,7 @@ function Home() {
       {!user ? (
         <div className="homePage">
           <div className="homeheader">
-            <div className="title">Reminders...</div>
+            <div className="title">Reminders</div>
             <div className="subtitle">
               Helps you to plan and schedule your daily life!
             </div>
